@@ -1,0 +1,21 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import { Background } from '@/components/background';
+import { AppFeatures } from '@/components/blocks/app-features';
+import { DownloadSection } from '@/components/blocks/download-section';
+import { Features } from '@/components/blocks/features';
+import { Hero } from '@/components/blocks/hero';
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+---
+
+<DefaultLayout title={SITE_TITLE} description={SITE_DESCRIPTION} >
+  <Background className="via-muted to-muted/80">
+    <Hero />
+    <Features />
+  </Background>
+  <AppFeatures client:only="react" />
+  <Background variant="bottom">
+    <DownloadSection client:only="react" />
+  </Background>
+</DefaultLayout>
