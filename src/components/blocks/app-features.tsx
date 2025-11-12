@@ -90,30 +90,30 @@ const features = [
 
 export const AppFeatures = () => {
   return (
-    <section className="py-16 lg:py-20 bg-muted/30">
+    <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
       <div className="container">
-        <div className="mx-auto max-w-3xl text-center mb-12">
-          <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl mb-4">
+        <div className="mx-auto max-w-3xl text-center mb-8 sm:mb-12 px-4">
+          <h2 className="text-2xl sm:text-3xl tracking-tight md:text-4xl lg:text-5xl mb-3 sm:mb-4">
             Todas las herramientas que necesitas
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base sm:text-lg">
             Inventia incluye todas las funcionalidades esenciales para gestionar tu inventario de manera profesional
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, i) => {
             const Icon = feature.icon;
             return (
               <div
                 key={i}
-                className="group relative overflow-hidden rounded-2xl border bg-background p-6 transition-all hover:shadow-lg"
+                className="group relative overflow-hidden rounded-xl sm:rounded-2xl border bg-background p-5 sm:p-6 transition-all hover:shadow-lg"
               >
-                <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-3">
-                  <Icon className="size-6 text-primary" />
+                <div className="mb-3 sm:mb-4 inline-flex rounded-lg sm:rounded-xl bg-primary/10 p-2.5 sm:p-3">
+                  <Icon className="size-5 sm:size-6 text-primary" />
                 </div>
-                <h3 className="mb-2 text-lg font-semibold">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <h3 className="mb-2 text-base sm:text-lg font-semibold">{feature.title}</h3>
+                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>

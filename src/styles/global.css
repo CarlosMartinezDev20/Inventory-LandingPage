@@ -232,7 +232,11 @@
 
 @utility container {
   margin-inline: auto;
-  padding-inline: 1.5rem;
+  padding-inline: 1rem;
+  width: 100%;
+  @media (width >= 640px) {
+    padding-inline: 1.5rem;
+  }
   @media (width >= 1400px) {
     max-width: 1220px;
   }
@@ -283,9 +287,12 @@
 html,
 body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 body {
   position: relative;
+  min-height: 100vh;
 }
 
 @layer base {
