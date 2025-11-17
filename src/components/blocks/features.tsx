@@ -53,6 +53,10 @@ export const Features = () => {
                     <img
                       src={item.image}
                       alt={`${item.title} interface`}
+                      loading="lazy"
+                      decoding="async"
+                      width="600"
+                      height="400"
                       className="w-full h-auto rounded-lg shadow-2xl group-hover:scale-[1.02] transition-all duration-500 ease-out"
                     />
                   </div>

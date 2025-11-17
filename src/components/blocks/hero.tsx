@@ -106,7 +106,11 @@ export const Hero = () => {
         <div className="relative h-[400px] sm:h-[600px] lg:h-[793px] w-full">
           <img
             src="/hero.webp"
-            alt="hero"
+            alt="Inventia - Interfaz principal del sistema de gestión de inventario"
+            fetchpriority="high"
+            decoding="async"
+            width="1920"
+            height="1080"
             className="w-full h-full rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tl-2xl sm:max-lg:rounded-tr-none"
           />
         </div>

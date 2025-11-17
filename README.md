@@ -96,25 +96,49 @@ npm run astro        # CLI de Astro
 ## 📁 Estructura del Proyecto
 
 ```
-mainline-astro-template/
+inventia-landing-page/
 ├── src/
 │   ├── components/
-│   │   └── blocks/
-│   │       ├── hero.tsx              # Hero principal
-│   │       ├── features.tsx          # Características con imágenes
-│   │       ├── app-features.tsx      # Grid de funcionalidades
-│   │       ├── download-section.tsx  # Sección de descarga
-│   │       ├── navbar.tsx            # Barra de navegación
-│   │       └── footer.tsx            # Footer
+│   │   ├── blocks/
+│   │   │   ├── hero.tsx              # Hero principal con features
+│   │   │   ├── features.tsx          # Características visuales con imágenes
+│   │   │   ├── app-features.tsx      # Grid de 12 funcionalidades
+│   │   │   ├── download-section.tsx  # Descarga e instalación
+│   │   │   ├── navbar.tsx            # Navegación responsive
+│   │   │   └── footer.tsx            # Footer con links
+│   │   ├── ui/                       # Componentes shadcn/ui
+│   │   ├── background.tsx            # Componente de fondo
+│   │   ├── theme-toggle.tsx          # Toggle dark/light mode
+│   │   └── BaseHead.astro            # Meta tags y SEO
+│   ├── layouts/
+│   │   └── DefaultLayout.astro       # Layout principal
 │   ├── pages/
-│   │   └── index.astro               # Página principal
-│   ├── styles/                       # Estilos globales
-│   └── consts.ts                     # Configuración y constantes
+│   │   ├── index.astro               # Página de inicio (única)
+│   │   └── 404.astro                 # Página de error 404
+│   ├── styles/
+│   │   └── global.css                # Estilos globales y CSS variables
+│   ├── consts.ts                     # Constantes y metadata
+│   └── content.config.ts             # Config de contenido (vacío)
 ├── public/
-│   ├── features/                     # Imágenes de características
+│   ├── features/                     # Imágenes de características (3)
+│   ├── favicon/                      # Favicons e iconos
+│   ├── fonts/                        # DM Sans font family
+│   ├── hero.webp                     # Imagen principal del hero
 │   └── og-image.jpg                  # Open Graph image
-└── README.md
+├── astro.config.mjs                  # Config optimizada de Astro
+├── package.json                      # Dependencias optimizadas
+├── tailwind.config.js                # Config de Tailwind
+└── README.md                         # Este archivo
 ```
+
+### 🧹 Optimizaciones Realizadas
+
+- ✅ Eliminadas páginas no usadas (about, contact, faq, pricing, login, signup, blog)
+- ✅ Removidos componentes innecesarios (14 componentes de bloques)
+- ✅ Limpiadas carpetas públicas sin uso (6 carpetas de imágenes)
+- ✅ Optimizado package.json (removido @astrojs/mdx, @astrojs/rss)
+- ✅ Simplificado content.config.ts (sin colecciones de blog)
+- ✅ Actualizado astro.config.mjs con URL correcta
 
 ---
 

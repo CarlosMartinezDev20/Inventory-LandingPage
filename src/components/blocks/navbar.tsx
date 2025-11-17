@@ -42,7 +42,7 @@ export const Navbar = () => {
       )}
     >
       <div className="flex items-center justify-between px-5 py-3 sm:px-7 sm:py-3.5">
-        <a href="/" className="flex shrink-0 items-center gap-2">
+        <a href="/" className="flex shrink-0 items-center gap-2" aria-label="Ir a inicio - Inventia">
           <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
             Inventia
           </span>
@@ -72,6 +72,9 @@ export const Navbar = () => {
           <ThemeToggle />
           <a
             href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver repositorio en GitHub (abre en nueva pestaña)"
             className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted/50 rounded-full"
           >
             <Github className="size-4 sm:size-[18px]" />
@@ -82,9 +85,11 @@ export const Navbar = () => {
           <button
             className="text-muted-foreground hover:text-foreground relative flex size-9 items-center justify-center lg:hidden hover:bg-muted/50 rounded-full transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
-            <span className="sr-only">Open main menu</span>
+            <span className="sr-only">{isMenuOpen ? "Cerrar" : "Abrir"} menú principal</span>
             <div className="absolute top-1/2 left-1/2 block w-[18px] -translate-x-1/2 -translate-y-1/2">
               <span
                 aria-hidden="true"
@@ -105,6 +110,9 @@ export const Navbar = () => {
 
       {/*  Mobile Menu Navigation */}
       <div
+        id="mobile-menu"
+        role="navigation"
+        aria-label="Menú de navegación móvil"
         className={cn(
           "bg-background/95 backdrop-blur-xl fixed inset-x-0 top-[calc(100%+1rem)] mx-auto w-[92%] max-w-[720px] flex flex-col rounded-3xl border border-border/50 p-6 shadow-2xl transition-all duration-300 ease-in-out lg:hidden",
           isMenuOpen

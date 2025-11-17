@@ -22,27 +22,20 @@ const imageURL = new URL(finalImage, Astro.url);
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 
-<!-- Preconnect to Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<!-- Load Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-
-<!-- Preload local fonts -->
+<!-- Preload critical local fonts -->
 <link 
   rel="preload" 
   href="/fonts/dm-sans/DMSans-Regular.ttf" 
   as="font" 
   type="font/ttf" 
-  crossorigin="anonymous"
+  crossorigin
 />
 <link 
   rel="preload" 
-  href="/fonts/dm-sans/DMSans-Bold.ttf" 
+  href="/fonts/dm-sans/DMSans-SemiBold.ttf" 
   as="font" 
   type="font/ttf" 
-  crossorigin="anonymous"
+  crossorigin
 />
 
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -87,13 +80,34 @@ const imageURL = new URL(finalImage, Astro.url);
 ))}
 
 <link rel="sitemap" href="/sitemap-index.xml" />
-<link
-	rel="alternate"
-	type="application/rss+xml"
-	title={SITE_TITLE}
-	href={new URL('rss.xml', Astro.site)}
-/>
 <meta name="generator" content={Astro.generator} />
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Inventia",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "1"
+  },
+  "description": finalDescription,
+  "softwareVersion": "1.0.0",
+  "downloadUrl": "https://github.com/CarlosMartinezDev20/Inventia/releases",
+  "screenshot": imageURL.toString(),
+  "author": {
+    "@type": "Person",
+    "name": "Carlos Martínez"
+  }
+})} />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
