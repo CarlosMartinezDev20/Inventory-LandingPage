@@ -9,7 +9,7 @@ export const GITHUB_URL =
   "https://github.com/CarlosMartinezDev20/Inventia";
 
 export const DOWNLOAD_URL =
-  "https://github.com/CarlosMartinezDev20/Inventia/releases/download/v1.0.0/Inventia.Setup.1.0.0.exe";
+  "https://github.com/CarlosMartinezDev20/Inventia/releases/download/v1.0.0/Inventia-Setup-1.0.0.exe";
 
 export const SITE_METADATA = {
   title: {
