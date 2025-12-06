@@ -32,7 +32,7 @@ export const SITE_METADATA = {
     "órdenes de venta",
     "almacén",
     "stock",
-    "control de inventario",
+    "control de inventario", 
   ],
   authors: [{ name: "Carlos" }],
   creator: "Carlos",
